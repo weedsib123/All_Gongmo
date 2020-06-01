@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gongmo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!--    layout.css 연결-->
+    <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<!--    juqrey-lightbox.css 연결-->
+    <link rel = "stylesheet" href="../js/jquery.lightbox.css" />
+<!--    기본 jquery 사용하기 위해 자바스크립드 연결-->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script>
+        //라이트 박스 사용하기
+        $(document).ready(function () {
+            $('a.btn').lightBox();//lightbox 기능
+        });
+    </script>
+
+</head>
+<!--id:top 으로 설정해서 gototop 기능 구현-->
+<body id="top">
+<!-- 공통되는 최상단, 메뉴바, footer은 index 메인페이지에만 주석을 달음 -->
+
+<!--최상단 구현-->
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <div class="fl_right">
+<!--            최상단 오른쪽부분에 login, register 구현-->
+            <ul>
+                <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+<!--            session에 데이터가 있다면-->
+                <% if(userid){%>
+                <li><%=userid%>님 환영합니다!</li>
+                <li><a href="/logout">Logout</a></li>
+<!--            session에 데이터가 없다면-->
+                <%}else{%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ################################################################################################ -->
+<!--그다음 홈페이지 이름을 표시하는 상단부분 구현-->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <h1><a href="/">공모전 다나와</a></h1>
+    </header>
+</div>
+
+
+
+<!-- ################################################################################################ -->
+<!--메뉴바 구성-->
+<div class="wrapper row4">
+    <nav id="mainav" class="hoc clear">
+        <ul class="clear">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a class="drop" href="/previous">지난 공모전</a>
+<!--                드랍다운 구현-->
+                <ul>
+                    <li><a href="/process1General">일반순</a></li>
+                    <li><a href="/process1Name">이름순</a></li>
+                </ul>
+            </li>
+            <li><a class="drop" href="/current">진행중인 공모전</a>
+                <ul>
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </li>
+            <li ><a href="/portfolio">portfolio 다운</a></li>
+            <li ><a href="/portfolioShare">portfolio 공유</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </nav>
+</div>
+<!-- ################################################################################################ -->
+<!--메인페이지 flexible slider 구현-->
+<div class="bgded overlay" style="background-image:url('../images/mainbackground1.jfif');">
+    <div id="pageintro" class="hoc clear">
+<!--        jquery flexible slider을 통해 구현-->
+        <div class="flexslider basicslider">
+            <ul class="slides">
+<!--                공모전 데이터를 랜덤으로 들고오기 위해 랜덤값 주었음-->
+                <%var rand=Math.floor(Math.random()*100%45);for(var i=0;i<5;i++){%>
+<!--                메인페이지에 공모전 데이터 5개를 띄움-->
+                <li>
+                    <article>
+                        <a><img src="<%=list[rand+i].mainimage%>" style="width:200px;height:auto;"/></a>
+                        <footer>
+                            <ul class="nospace inline pushright">
+<!--                                lightbox를 적용한 크게보기를 누르면 크게 보여지게 함 -->
+                                <li><a class="btn" href="<%=list[rand+i].mainimage%>">크게보기</a></li>
+<!--                                새로운 탭으로 그 공모전이 열리는 사이트에 들어가기-->
+                                <li><a class="btn1 inverse" href="<%=list[rand+i].url%>" target="_blank">홈페이지 이동</a></li>
+                            </ul>
+                        </footer>
+                    </article>
+                </li>
+                <%}%>
+            </ul>
+
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!--최하단 copyright footer 구현-->
+<div id="footer">
+    <img src="../img/세종대학교.PNG" alt="세종대">
+    <ul class="nav">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">개인정보 취급방침</a></li>
+        <li><a href="#">이메일무단수집거부</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <address>
+        05006 서울특별시 광진구 능동로 209 (군자동) 세종대학교 <span>TEL02-3408-3114</span>
+        <em>COPYRIGHT 2012 SEJONG UNIVERSITY. ALL RIGHTS RESVERED.</em>
+    </address>
+</div>
+
+<!--최상단으로 이동하기 위한 버튼-->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+
+
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+<script src="../js/jquery.lightbox.js"></script>
+
+</body>
+</html>
+

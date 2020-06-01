@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gongmo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <!-- JAVASCRIPTS -->
+    <script src="../layout/scripts/jquery.min.js"></script>
+    <script src="../layout/scripts/jquery.backtotop.js"></script>
+    <script src="../layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="../layout/scripts/jquery.flexslider-min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <style>
+        #shareimg{width:100px;height:50px;} /*파일 리스트의 이미지 스타일 속성이다.*/
+
+
+        input.imgButton {
+            /* 파일 다운로드 버튼의 이미지 스타일 속성이다. */
+            /* 다운로드 이미지 파일을 불러오고 크기 및 위치 설정을 한다.*/
+            background: url("images/fileButtonimg.png") no-repeat;
+            border: none;
+            width: 50px;
+            height: 50px;
+            float: right;
+            cursor: pointer;
+            margin-top:23px;
+        }
+    </style>
+    <script>
+        function getFileDown1() {
+            /* 로그인이 안되어 있을 시에 로그인 하라는 알림창을 띄어준다.*/
+            alert("로그인을 하세요!");
+        }
+    </script>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <!-- ################################################################################################ -->
+
+        <div class="fl_right">
+            <ul>
+                <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+                <!-- 로그인 기능 -->
+                <% if(userid){console.log(userid)%>
+                <li><%=userid%>님 환영합니다!</li>
+                <li><a href="/logout">Logout</a></li>
+
+                <%}else{%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                <%}%>
+
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h1><a href="/">공모전 다나와</a></h1>
+        <!-- ################################################################################################ -->
+    </header>
+</div>
+
+
+
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <nav id="mainav" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a class="drop" href="/previous">지난 공모전</a>
+                <ul>
+                    <li><a href="/process1General">일반순</a></li>
+                    <li><a href="/process1Name">이름순</a></li>
+                </ul>
+            </li>
+            <li><a class="drop" href="/current">진행중인 공모전</a>
+                <ul>
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </li>
+            <li ><a href="/portfolio">portfolio 다운</a></li>
+            <li class="active"><a  href="/portfolioShare">portfolio 공유</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!--메인---->
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <div class="content">
+            <!-- ################################################################################################ -->
+            <div id="portfolioShare">
+                <h1>포트폴리오 공유 공간</h1>
+                <br>
+                <form method="post"enctype="multipart/form-data" action="portfolioShare"><!-- action에 /portfolioShare만 써도 된다.
+          /process/portfoliShare 해버리면 파일 업로드 후에 localhost:3000/process/portfolioShare 주소로 이동되버려서 이동이 안된다.-->
+                    <table>
+                        <tr>
+                            <td><input type="file"name="share"/></td><td><input type="submit"value="업로드"name="submit"/></td>
+                        </tr>
+                    </table>
+                    <table id="share_list">
+                        <!-- 파일 리스트들을 전부다 불러온다. fileid는 서버에 있는 파일 목록이다. -->
+                        <%for(var i=0;i<fileid.length;i++){%>
+                        <tr>
+                            <!-- 다운 받은 파일의 확장자명이 이미지 파일이 아니면 파일 리스트에 기본 이미지를 보여준다. -->
+                            <%if(ext[i]=="jpg"||ext[i]=="png"||ext[i]=="bmp"||ext[i]=="rle"||ext[i]=="dib"||ext[i]=="gif"||ext[i]=="tif")  {%>
+                            <td id="shareimg">
+                                <img src="./uploads/<%=fileid[i]%>">
+                            </td>
+                            <%}else{%>
+                                <!-- 기본 이미지를 보여준다 왜냐면 ppt 파일 같은 경우에는 이미지가 없기 때문이다. -->
+                                <td id="shareimg">
+                                    <img src="./images/defaultfile.jpg">
+                                </td>
+                            <%}%>
+                            <td><label><%=fileid[i]%></label></td> <!-- 파일 리스트의 파일명들을 보여준다. -->
+                            <td  id="downshare">다운로드
+                                <% if(userid){%>
+                                <!-- 만약에 로그인이 되어있으면 getShareFileDown()함수를 통해 파일을 다운 받을 수 있다. -->
+                                <input type="button" class="imgButton" id="fileShareBtn"
+                                       onclick="getShareFileDown('<%=fileid[i]%>')"/></td></tr>
+                        <%}else{%>
+                            <!-- 만약에 로그인이 안되어 있다면 getFileDown1()함수를 통해 로그인을 하라는 알림창을 띄어준다. -->
+                            <input type="button" class="imgButton" id="fileShareBtn"
+                                   onclick="getFileDown1()"/></td></tr>
+                        <%}%>
+                        <%}%>
+                    </table>
+                    <script>
+                        window.onload = function(){}
+                        function getShareFileDown(share) {
+                            /* share에는 다운받고자 하는 파일명이 들어가 있다. 경로를 통해 download폴더에 파일을 다운로드 한다.*/
+                            window.location = '/download/' + share;
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- / main body -->
+
+    </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+
+<div id="footer">
+    <img src="../img/세종대학교.PNG" alt="세종대">
+    <ul class="nav">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">개인정보 취급방침</a></li>
+        <li><a href="#">이메일무단수집거부</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <address>
+        05006 서울특별시 광진구 능동로 209 (군자동) 세종대학교 <span>TEL02-3408-3114</span>
+        <em>COPYRIGHT 2012 SEJONG UNIVERSITY. ALL RIGHTS RESVERED.</em>
+    </address>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>

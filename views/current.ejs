@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gongmo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <!-- JAVASCRIPTS -->
+    <script src="../layout/scripts/jquery.min.js"></script>
+    <script src="../layout/scripts/jquery.backtotop.js"></script>
+    <script src="../layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="../layout/scripts/jquery.flexslider-min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+    <script language='javascript'>
+        // 조회수 업데이트
+        var update = function(val){
+            // post 방식으로 processupdate 로 연결
+            $.ajax({
+                type: "Post",
+                url: "/processupdate",
+                data: {"url": val}, //json 형식으로 값 전달해준다
+                dataType: "json", //전달하는 타입
+                success:
+                //값 전달됐다면 실행
+                    function(success){
+                        if(success.ok == 'Y'){
+                            location.reload();
+                        }
+                    }
+            });
+        }
+        </script>
+
+
+    <script type="text/javascript">
+        $(function(){
+            // id가 city 인 부분에 변화가 온다면 함수실행
+            $("#city").on("change",function(){
+                // weather 부분에 값 지워주기
+                $("#weather").empty();
+                //밑에서 지역을 클릭했을 때 값 들고옴
+                var click = $(this).val();
+                $.ajax({
+                    // rss 제공해주는 xml 데이터가져오기
+                    url: "http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108",
+                    dataType:"xml",
+                    //가져왔다면 실행
+                    success:function(result){
+                        $(result).find("location").each(function(){
+                            // xml데이터를 파싱해서 도시 데이터가 같다면
+                            if(click == $(this).find("city").text()){
+                                var image;
+                                $(this).find("data").each(function(){//최근5일날짜
+                                    if($(this).find("tmEf").text().substring(11,16)== "12:00"){//시간 빼오기
+                                        var date = $(this).find("tmEf").text().substring(5,10);//날짜 빼오기
+                                        var state = $(this).find("wf").text();
+                                        // 날씨에 따라서 이미지 다르게 저장
+                                        if(state == "구름많음"){
+                                            image = "http://ssl.pstatic.net/static/weather/images/w_icon/w_l21.gif";
+                                        }
+                                        else if(state == "흐리고 한때 비" || "구름많고 비" || "흐리고 비" || "비"){
+                                            image = "http://ssl.pstatic.net/static/weather/images/w_icon/w_l4.gif";
+                                        }
+                                        else if(state == "흐림"){
+                                            image = "http://ssl.pstatic.net/static/weather/images/w_icon/w_l3.gif";
+                                        }
+                                        else if(state == "맑음"){
+                                            image = "http://ssl.pstatic.net/static/weather/images/w_icon/w_l1.gif";
+                                        }
+                                        var min = $(this).find("tmn").text();//최저기온
+                                        var max = $(this).find("tmx").text();//최고기온
+                                        $("#weather").append('<img src="'+image+'"</img>');
+                                        var first = "<p>날짜: " + date + "<br>상태: " + state + "<br>최고: " + max + "<br>최저: " + min +"";
+                                        $("#weather").append('<span style ="font-size:0.7em;left:5px;">'+first+'</span>');
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            //isEnd에 처음값을 0으로 준다.
+            isEnd=0;
+            var appendDocument = function(){
+                //데이터가 모두 출력되면 실행 그만하기.
+                if(isEnd==1)
+                    return;
+                //15개데이터부터 나머지 모두 출력하기
+                <% for(var j=15;j < list.length ;j++)  { %>
+                $('                    \n' +
+                    '                    <li>\n' +
+                    '                        <a href="<%= list[j].url %>" target="_blank" onclick="update(\'<%= list[j].url %>\')">\n' +
+                    '                            <img style="float:left;height:140px;padding:15px;"src="<%= list[j].image %>" alt="<%= list[j].title %>"></img>\n' +
+                    '                        </a>\n' +
+                    '                        <div id="gonmo-cont" style="margin-top:15px;"><b>\n' +
+                    '                        <p>주제 : <%= list[j].title %></p>\n' +
+                    '                        <p>시간 : <%= list[j].time %></p>\n' +
+                    '                        <p>주관 : <%= list[j].boss %></p>\n' +
+                    '                        <p>조회수 : <%= list[j].count %></p>\n' +
+                    '                        </b>\n' +
+                    '                        </div>\n' +
+                    '                        </article>\n' +
+                    '                    </li>\n'
+                    ).appendTo('#infinite');
+
+                                    <% } %>
+                //출력하고 isEnd에 1을 주어 더 로드안되게 하기
+                    isEnd=1;
+                }
+
+            //90퍼정도 스크롤 내려왔을 때 데이터 나오게 하기
+            $(window).scroll(function(){
+                var scrollHeight=$(window).scrollTop()+$(window).height();
+                var documentHeight=$(document).height();
+                if(scrollHeight>documentHeight*0.9){
+                    appendDocument();
+                }
+            })
+        })
+    </script>
+</head>
+<body id="top">
+<!-- 공통되는 최상단, 메뉴바, footer은 index 메인페이지에만 주석을 달음 -->
+
+<!--최상단 구현-->
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <div class="fl_right">
+            <!--            최상단 오른쪽부분에 login, register 구현-->
+            <ul>
+                <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+                <!--            session에 데이터가 있다면-->
+                <% if(userid){%>
+                <li><%=userid%>님 환영합니다!</li>
+                <li><a href="/logout">Logout</a></li>
+                <!--            session에 데이터가 없다면-->
+                <%}else{%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ################################################################################################ -->
+<!--그다음 홈페이지 이름을 표시하는 상단부분 구현-->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <h1><a href="/">공모전 다나와</a></h1>
+    </header>
+</div>
+
+
+
+<!-- ################################################################################################ -->
+<!--메뉴바 구성-->
+<div class="wrapper row4">
+    <nav id="mainav" class="hoc clear">
+        <ul class="clear">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a class="drop" href="/previous">지난 공모전</a>
+                <!--                드랍다운 구현-->
+                <ul>
+                    <li><a href="/process1General">일반순</a></li>
+                    <li><a href="/process1Name">이름순</a></li>
+                </ul>
+            </li>
+            <li class="active"><a class="drop" href="/current">진행중인 공모전</a>
+                <ul>
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </li>
+            <li ><a href="/portfolio">portfolio 다운</a></li>
+            <li ><a href="/portfolioShare">portfolio 공유</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!--날씨정보들을 제공하는 부분-->
+<div id="jb-sidebar">
+    <h2>날씨정보</h2>
+    <select id = "city">
+        <option value='' selected>— 도시 —</option>
+        <option value="서울">서울</option>
+        <option value="인천">인천</option>
+        <option value="수원">수원</option>
+        <option value="파주">파주</option>
+        <option value="평택">평택</option>
+        <option value="춘천">춘천</option>
+        <option value="원주">원주</option>
+        <option value="강릉">강릉</option>
+        <option value="대전">대전</option>
+        <option value="세종">세종</option>
+    </select>
+    <!--    날씨 정보를 보여줄 div -->
+    <div id="weather" >
+
+    </div>
+</div>
+
+<!--현재 공모전 페이지에서 보여줄 사이드 메뉴-->
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <div class="sidebar one_quarter first">
+            <!-- ################################################################################################ -->
+            <h6>공모전 분류하기</h6>
+            <nav class="sdb_holder">
+                <ul>
+<!--                    각 링크를 통해 db값을 정렬시킴-->
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content three_quarter">
+            <div id="comments">
+                <h2>진행중인 현황</h2>
+<!--                15개 이후 데이터 보여기 위해 id 속성에 값을 줌-->
+                <ul id="infinite">
+<!--                    처음 데이터 15개만 보여준다-->
+                    <%for(var i=0;i<15 ;i++)  {%>
+                    <li id="cur_list">
+<!--                        클릭했을 때 update함수를 이용해 ajax를 이용해 값을 보내줌-->
+                        <a href="<%=list[i].url%>" id="cur_href" target="_blank" onclick="update('<%=list[i].url%>')">
+                            <img style="float:left;height:140px;padding:15px;"src="<%=list[i].image%>" alt="<%=list[i].title%>"></img>
+                        </a>
+<!--                        list에 저장된 주제, 시간, 주관, 조회수들을 보여줌-->
+                        <div id="gonmo-cont" style="margin-top:15px;"><b>
+                        <p>주제 : <%=list[i].title%></p>
+                        <p>시간 : <%=list[i].time%></p>
+                        <p>주관 : <%=list[i].boss%></p>
+                        <p>조회수 : <%=list[i].count%></p>
+                        </b>
+                        </div>
+                        </article>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- ################################################################################################ -->
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- / main body -->
+        <div class="clear"></div>
+    </main>
+</div>
+<!-- ################################################################################################ -->
+
+
+<!--최하단 copyright footer 구현-->
+<div id="footer">
+    <img src="../img/세종대학교.PNG" alt="세종대">
+    <ul class="nav">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">개인정보 취급방침</a></li>
+        <li><a href="#">이메일무단수집거부</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <address>
+        05006 서울특별시 광진구 능동로 209 (군자동) 세종대학교 <span>TEL02-3408-3114</span>
+        <em>COPYRIGHT 2012 SEJONG UNIVERSITY. ALL RIGHTS RESVERED.</em>
+    </address>
+</div>
+
+<!--최상단으로 이동하기 위한 버튼-->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+</body>
+</html>

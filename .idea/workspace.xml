@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="667d4427-bf76-4d87-9c5e-41d37694f6f3" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index1.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1044">
+              <caret line="58" column="6" selection-start-line="8" selection-end-line="58" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/register.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1638">
+              <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/portfolioShare.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1728">
+              <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/current.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4356">
+              <caret line="242" column="28" lean-forward="true" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbinit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1998">
+              <caret line="111" column="1" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/previous.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1890">
+              <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>infomodel</find>
+      <find>processlogin</find>
+      <find>getfiledown1</find>
+      <find>@media screen and</find>
+      <find>max-width</find>
+      <find>min-width</find>
+      <find>max-width:40</find>
+      <find>filebtn</find>
+      <find>/por</find>
+      <find>portf</find>
+      <find>select</find>
+      <find>port</find>
+      <find>import</find>
+      <find>@media</find>
+      <find>update</find>
+      <find>authu</find>
+      <find>authuser</find>
+      <find>adduser</find>
+      <find>파일업로드</find>
+      <find>포트폴리오</find>
+      <find>/portfol</find>
+      <find>previous</find>
+      <find>/portfolioshare</find>
+      <find>ch</find>
+      <find>FLEXSLIDER</find>
+      <find>lightbox</find>
+      <find>진행중인</find>
+      <find>cl</find>
+      <find>process</find>
+      <find>appServer</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/login.ejs" />
+        <option value="$PROJECT_DIR$/register.ejs" />
+        <option value="$PROJECT_DIR$/index1.ejs" />
+        <option value="$PROJECT_DIR$/js/jquery.lightbox.css" />
+        <option value="$PROJECT_DIR$/layout/styles/fontawesome-4.6.3.min.css" />
+        <option value="$PROJECT_DIR$/layout/scripts/jquery.flexslider-min.js" />
+        <option value="$PROJECT_DIR$/layout/styles/custom.flexslider.css" />
+        <option value="$PROJECT_DIR$/layout/styles/framework.css" />
+        <option value="$PROJECT_DIR$/dbinit2.js" />
+        <option value="$PROJECT_DIR$/dbinit.js" />
+        <option value="$PROJECT_DIR$/views/portfolio.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/portfolioShare.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/views/register.ejs" />
+        <option value="$PROJECT_DIR$/views/index1.ejs" />
+        <option value="$PROJECT_DIR$/layout/styles/layout.css" />
+        <option value="$PROJECT_DIR$/layout/scripts/jquery.backtotop.js" />
+        <option value="$PROJECT_DIR$/layout/scripts/jquery.mobilemenu.js" />
+        <option value="$PROJECT_DIR$/views/previous.ejs" />
+        <option value="$PROJECT_DIR$/views/current.ejs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="479" />
+    <option name="y" value="122" />
+    <option name="width" value="984" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="공모전~1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="공모전~1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="공모전~1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="공모전~1" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="C:/key/maile" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\untitled1\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\UNTITL~3\layout\styles" />
+      <recent name="C:\UNTITL~3\layout\styles\fonts" />
+      <recent name="C:\UNTITL~3\layout" />
+      <recent name="C:\untitled1\js" />
+      <recent name="C:\untitled1\views" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.app.js">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.app.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="667d4427-bf76-4d87-9c5e-41d37694f6f3" name="Default Changelist" comment="" />
+      <created>1562826776821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562826776821</updated>
+      <workItem from="1562826778487" duration="15271000" />
+      <workItem from="1562846027514" duration="3520000" />
+      <workItem from="1562906231116" duration="22813000" />
+      <workItem from="1562995271366" duration="19546000" />
+      <workItem from="1563061449563" duration="4785000" />
+      <workItem from="1563066250461" duration="11637000" />
+      <workItem from="1563091833786" duration="27029000" />
+      <workItem from="1563152819440" duration="1227000" />
+      <workItem from="1563282878501" duration="14863000" />
+      <workItem from="1563329513396" duration="1403000" />
+      <workItem from="1590728580378" duration="2355000" />
+      <workItem from="1590982983815" duration="92000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="124541000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.098101266" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3298153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.21372032" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31543624" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="274" column="9" selection-start-line="274" selection-start-column="9" selection-end-line="274" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.ejs" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="766" column="9" selection-start-line="766" selection-start-column="9" selection-end-line="766" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ejs/lib/ejs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="667" column="16" selection-start-line="667" selection-start-column="16" selection-end-line="667" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.ejs" />
+    <entry file="file://$PROJECT_DIR$/index1.ejs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/11.13.0/core-modules/internal/timers.js" />
+    <entry file="file://$PROJECT_DIR$/error.ejs" />
+    <entry file="file://$PROJECT_DIR$/js/jquery-1.10.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express-error-handler/error-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/11.13.0/core-modules/internal/modules/cjs/loader.js" />
+    <entry file="file://$PROJECT_DIR$/js/jquery.bxslider.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/fonts/fontawesome-webfont.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/fonts/framework.css" />
+    <entry file="file://$PROJECT_DIR$/layout/styles/fonts/index.html" />
+    <entry file="file://$PROJECT_DIR$/views/error.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/portfolio.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="295" column="26" lean-forward="true" selection-start-line="295" selection-start-column="26" selection-end-line="295" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbinit2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="27" column="56" lean-forward="true" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER~1/download.js" />
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/routes/index.js" />
+    <entry file="file://$PROJECT_DIR$/layout/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/jquery.lightbox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret selection-end-line="11" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.lightbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1944" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/404.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/index.html" />
+    <entry file="file://$PROJECT_DIR$/images/portfolioimg5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/custom.flexslider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/fontawesome-4.6.3.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/framework.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1522">
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/index.html" />
+    <entry file="file://$PROJECT_DIR$/layout/scripts/index.html" />
+    <entry file="file://$PROJECT_DIR$/layout/scripts/jquery.backtotop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/scripts/jquery.flexslider-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/scripts/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/scripts/jquery.mobilemenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/styles/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1016">
+          <caret line="676" selection-start-line="676" selection-end-line="676" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index1.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" column="6" selection-start-line="8" selection-end-line="58" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1638">
+          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/portfolioShare.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/current.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4356">
+          <caret line="242" column="28" lean-forward="true" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbinit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1998">
+          <caret line="111" column="1" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/previous.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

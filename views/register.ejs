@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gongmo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <!-- ################################################################################################ -->
+
+        <div class="fl_right">
+            <ul>
+                <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h1><a href="/">공모전 다나와</a></h1>
+        <!-- ################################################################################################ -->
+    </header>
+</div>
+
+
+
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <nav id="mainav" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a class="drop" href="/previous">지난 공모전</a>
+                <ul>
+                    <li><a href="/process1General">일반순</a></li>
+                    <li><a href="/process1Name">이름순</a></li>
+                </ul>
+            </li>
+            <li><a class="drop" href="/current">진행중인 공모전</a>
+                <ul>
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </li>
+            <li ><a href="/portfolio">portfolio 다운</a></li>
+            <li><a href="/portfolioShare">portfolio 공유</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--회원가입 구현-->
+<div class="login">
+    <h2 class="s_tit">회원가입</h2>
+<!--    라우터 processadduser을 통해 서버에서 처리해줌-->
+    <form method="post" id="login-form1" action="/processaddUser">
+        <label class="legend1">아이디
+        <input type="text" name="id"/>
+        </label><br>
+        <label class="legend1">비밀번호
+            <input type="password" name="passwords"/>
+        </label><br>
+        <label class="legend1" for="name">이름
+            <input type="text" name="name"/>
+        </label><br>
+        <input type="submit" id="register1" value="회원가입"/>
+    </form>
+</div>
+
+<!--footer-->
+<div id="footer">
+    <img src="img/세종대학교.PNG" alt="세종대">
+    <ul class="nav">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">개인정보 취급방침</a></li>
+        <li><a href="#">이메일무단수집거부</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <address>
+        05006 서울특별시 광진구 능동로 209 (군자동) 세종대학교 <span>TEL02-3408-3114</span>
+        <em>COPYRIGHT 2012 SEJONG UNIVERSITY. ALL RIGHTS RESVERED.</em>
+    </address>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.flexslider-min.js"></script>
+</body>
+</html>

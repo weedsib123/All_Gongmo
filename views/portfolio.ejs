@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gonmo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function(){
+            var mySlider=$("#slide_banner").bxSlider({
+                mode:"horizontal", // 가로 수평으로 슬라이드 됩니다.
+                speed:500, // 이동 속도를 설정합니다.
+                pager:false, // 현재 위치 페이징 표시 여부 설정.
+                moveSlides:1, // 슬라이드 이동시 갯수 설정.
+                slideWidth:90, // 슬라이드 마다 너비 설정.
+                minSlides:4, // 최소 노출 개수를 설정합니다.
+                maxSlides:4, // 최대 노출 개수를 설정합니다.
+                slideMargin:10, // 슬라이드간의 간격을 설정합니다.
+                auto:true, // 자동으로 흐를지 설정합니다.
+                autoHover:true, // 마우스 오버시 정시킬지 설정합니다.
+                controls:false // 이전 다음 버튼 노출 여부 설정합니다.
+            });
+            //이전 버튼을 클릭하면 이전 슬라이드로 전환됩니다.
+            $("#prevBtn").on("click",function(){
+                mySlider.goToPrevSlide(); //이전 슬라이드 배너로 이동됩니다.
+                return false; //<a>에 링크를 차단합니다.
+            });
+            //다음 버튼을 클릭하면 다음 슬라이드로 전환됩니다.
+            $("#nextBtn").on("click",function(){
+                mySlider.goToNextSlide(); //다음 슬라이드 배너로 이동됩니다.
+                return false;
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        img{border:none 0;vertical-align:top;}
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        .modal-content {
+            /*box Slider 아래에 있는 이미지 슬라이더의 style을 설정한다*/
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* 이미지 슬라이더 부분의 오른쪽 버튼과 왼쪽 버튼의 스타일 */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* next 버튼을 오른쪽에 위치시킨다 */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* 오른쪽 버튼과 왼쪽 버튼을 누를 시 스타일이다. */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 이미지 슬라이더의 1/12 넘버 칸의 스타일이다. */
+        .numbertext {
+            color: #0E76A8;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /*포트폴리오 양식 다운로드 버튼의 스타일이다.*/
+        input.imgButton {
+            background: url("images/fileButtonimg.png") no-repeat;
+            border: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        img {
+            margin-bottom: -4px;
+        }
+        /*이미지 슬라이더의 이미지 밑의 텍스트 스타일이다.*/
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+        /*이미지 슬라이더의 데모 이미지의 스타일 속성이다.*/
+        .demo {
+            opacity: 0.6;
+        }
+        /*데모 이미지를 클릭 시 효과를 준다*/
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+        /*박스 슬라이더의 이미지들 그림자를 주기 위한 스타일 속성이다.*/
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+        /*박스 슬라이더 클릭시 그림자를 보이게 한다.*/
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+        <!-- ################################################################################################ -->
+
+        <div class="fl_right">
+            <ul>
+                <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+                <% if(userid){%>
+                <li><%=userid%>님 환영합니다!</li>
+                <li><a href="/logout">Logout</a></li>
+
+                <%}else{%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                <%}%>
+            </ul>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h1><a href="/">공모전 다나와</a></h1>
+        <!-- ################################################################################################ -->
+    </header>
+</div>
+
+
+
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    <nav id="mainav" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a class="drop" href="/previous">지난 공모전</a>
+                <ul>
+                    <li><a href="/process1General">일반순</a></li>
+                    <li><a href="/process1Name">이름순</a></li>
+                </ul>
+            </li>
+            <li><a class="drop" href="/current">진행중인 공모전</a>
+                <ul>
+                    <li><a href="/processGeneral">일반순</a></li>
+                    <li><a href="/processCount">마감순</a></li>
+                    <li><a href="/processClick">조회순</a></li>
+                    <li><a href="/processName">이름순</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="/portfolio">portfolio 다운</a></li>
+            <li ><a href="/portfolioShare">portfolio 공유</a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3" style="border:1px solid gold; padding: 10px; height: 1000px; min-height: 100px; overflow: auto;">
+    <div>
+        <label for="" id="downloadlb">다운로드</label>
+        <!--다운로드 이미지 버튼을 누르면 getFileDown 함수가 실행되고 함수에는 클릭 시 해당 포트폴리오 양식 이름 정보를 서버에 보내줍니다.-->
+        <!--로그인 여부에 따라 파일을 다운로드 할 수 있게 if else로 구현 했습니다.-->
+        <% if(userid){%>
+            <input type="button" class="imgButton" id="fileBtn" onclick="getFileDown()"/>
+        <%}else{%>
+            <input type="button" class="imgButton" id="fileBtn" onclick="getFileDown1()"/>
+        <%}%>
+    </div>
+    <script>
+        function getFileDown() {
+            /*다운로드 할 포트폴리오 양식 이름을 서버에 보내주는 함수*/
+            window.location = '/download/' + "portfolio" + slideIndex +".pptx";
+        }
+        function getFileDown1() {
+            /*로그인 실패 시*/
+            alert("로그인을 하세요!");
+        }
+    </script>
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <div class="content">
+            <!-- ################################################################################################ -->
+            <div id="portfolio">
+                <ul id="slide_banner">
+                    <script>
+                        /*박스 슬라이더의 포트폴리오 양식 이미지들을 만든다.*/
+                        for(var i=1;i<=12;i++){
+                            $("#slide_banner").append('<li><a><img src="images/portfolioimg'+i+'.jpg" onclick="openModal();currentSlide('+i+')" class="hover-shadow cursor" alt="" /></a></li>')
+                        }
+                    </script>
+                </ul>
+                <!--박스 슬라이더의 오른쪽 버튼과 왼쪽 버튼이다.-->
+                <p><a href="#" id="prevBtn"><img src="images/next_btn.png" alt="이전버튼" /></a></p>
+                <p><a href="#" id="nextBtn"><img src="images/prev_btn.png" alt="다음버튼" /></a></p>
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <script>
+                        /*이미지 슬라이더의 이미지들을 만든다.*/
+                        for(var i=1;i<=12;i++){
+                            $(".modal-content").append('<div class="mySlides"><div class="numbertext">'+i+' / 12</div><img src="images/portfolioimg'+i+'.jpg" style="width:100%"></div>')
+                        }
+                    </script>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+
+                    <div class="column-contain">
+                        <script>
+                            /*이미지 슬라이더의 데모 이미지들을 만든다.*/
+                            for(var i=1;i<=12;i++){
+                                $(".column-contain").append('<div class="column"><img class="demo cursor" src="images/portfolioimg'+i+'.jpg" style="width:100%" onclick="currentSlide('+i+')" alt="포트폴리오"></div>')
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- ################################################################################################ -->
+            <!-- ################################################################################################ -->
+            <!-- ################################################################################################ -->
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- / main body -->
+
+    </main>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--footer-->
+<div id="footer">
+    <img src="img/세종대학교.PNG" alt="세종대">
+    <ul class="nav">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">개인정보 취급방침</a></li>
+        <li><a href="#">이메일무단수집거부</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
+    <address>
+        05006 서울특별시 광진구 능동로 209 (군자동) 세종대학교 <span>TEL02-3408-3114</span>
+        <em>COPYRIGHT 2012 SEJONG UNIVERSITY. ALL RIGHTS RESVERED.</em>
+    </address>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        /*이미지 생성할 때 슬라이드 인덱스를 하나씩 올려주기 위해 함수 선언.*/
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        /*클릭한 슬라이더의 인덱스를 알아내기 위해 함수 선언.*/
+        showSlides(slideIndex = n);
+        function democursors(n) {
+
+        }
+    }
+
+    function showSlides(n) {
+        /*이미지 슬라이더와 데모 슬라이더 설정.*/
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            /*이미지 클릭 시 해당 이미지 말고 다른 이미지들은 보여주지 않는다.*/
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            /*데모 이미지 하나를 누르면 활성화 시키고 나머지 데모 이미지들은 비활성화 시킨다.*/
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
+</body>
+</html>
